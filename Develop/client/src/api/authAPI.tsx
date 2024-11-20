@@ -19,8 +19,8 @@ const login = async (userInfo: UserLogin) => {
 
     return data;
   } catch (err) {
-    console.error('Error from user lgin:, ', err);
-    return Promise.reject('Could not fetch user info');
+    console.error('Error during login:, ', err);
+    return Promise.reject('Invalid credentials');
   }
 };
 

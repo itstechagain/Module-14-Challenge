@@ -11,13 +11,13 @@ export const login = async (req: Request, res: Response) => {
   });
 
   if (!user) {
-    return res.status(401).json({ message: `Authentication failed` });
+    return res.status(401).json({ message: `Authentication Failed` });
   }
 
   const passwordIsValid = await bcrypt.compare(password, user.password);
 
   if (!passwordIsValid) {
-    return res.status(401).json({ message: 'Authetication failed' });
+    return res.status(401).json({ message: 'Authetication Failed' });
   }
 
   const secretKey = process.env.JWT_SECRET_KEY || '';
